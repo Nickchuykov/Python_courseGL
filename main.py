@@ -8,10 +8,9 @@ def hello():
     return f'Chuykov Nikita TI-82'
 @app.route('/first')
 def variable_1():
-    a = 'Kpi top'
-    b = abc
-    c = 123
-    return f'a,b,c'
+    a,b,c = "kpi",None,1488
+    f_string = f "F-string: {a};{b};{c}"
+    return f'{a},{b},{c}'
 
 if __name__ == '__main__':
     app.run('0.0.0.0')
