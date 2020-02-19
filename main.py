@@ -9,7 +9,7 @@ def hello():
 @app.route('/first')
 def variable_1():
     a,b,c = "kpi",None,1488
-    f_string = f "F-string: {a};{b};{c}"
+   
     return f'{a},{b},{c}'
 
 if __name__ == '__main__':
