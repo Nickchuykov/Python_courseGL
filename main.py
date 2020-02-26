@@ -21,11 +21,9 @@ def second():
         return render_template("Front.html")
     if request.method == 'POST':
         text = request.form['text']
-        
-        return str(text)
-
-
-
+        reversed_string = string[::-1]
+       return str(text)
+	
 
 
 
