@@ -13,5 +13,22 @@ def variable_1():
    
     return f'{a},{b},{c}'
 
+@app.route('/second', methods=['GET', 'POST'])
+def second():
+    import pdb;
+    pdb.set_trace()
+    if request.method == 'GET':
+        return render_template("Front.html")
+    if request.method == 'POST':
+        text = request.form['text']
+
+        return str(text)
+
+
+
+
+
+
+
 if __name__ == '__main__':
     app.run('0.0.0.0')
