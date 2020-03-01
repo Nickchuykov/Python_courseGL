@@ -15,17 +15,16 @@ def first():
     c = 'Python is Cool!'
     return f'{a}, {b}, {c}'
     
-@app.route('/second',methods = ["GET", "POST"])
+@app.route('/second', methods=['GET','POST'])
 def second():
     if  request.method == 'GET':
-        return render_template('second.html')
+        return render_template('./second2.html')
     if request.method == 'POST':
         text = request.form.get('text')
-        first = "".join(reversed(text))
-        second = "".join([x for x in text[::-1]])
-        third = text[::-1]
-        return f'reversed: \t{first}<br/>comprehention: \t{second}<br/>slicing: \t{third}'
-
+        rev1=text[::-1] #slice
+        rev2="".join(list(reversed(text))) #reversed
+        rev3="".join([x for x in reversed(text)]) #comprehension
+        return f'$lice: {rev1}</br>rever$ed: {rev2}</br>comprehen$ion: {rev3}</br>'
 
 @app.route('/third',methods = ["GET", "POST"])
 def third():
