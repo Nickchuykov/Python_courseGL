@@ -1,6 +1,6 @@
 # telegram @nickchuykov
 from flask import Flask, escape, request, render_template
-from Сlasses_Cards import Deck
+from classes import Deck
 
 app = Flask(__name__)
 deck = Deck()
