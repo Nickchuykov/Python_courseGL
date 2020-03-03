@@ -1,7 +1,9 @@
 # telegram @nickchuykov
 from flask import Flask, escape, request, render_template
+from Сlasses_Cards import Deck
 
 app = Flask(__name__)
+deck = Deck()
 
 
 @app.route('/')
