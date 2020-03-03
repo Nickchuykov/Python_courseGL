@@ -32,7 +32,21 @@ def second():
 
 @app.route('/third', methods=["GET", "POST"])
 def third():
-    pass
+    if request.method == 'GET':
+        return render_template('third.html', content='\u0020', deck=str(deck))
+    else:
+        if "shuffle" in request.form:
+            deck.shuffle()
+            value = "Deck was shuffled"
+        elif "pop" in request.form:
+            value = deck.pop()
+        elif "get_random" in request.form:
+            value = deck.get_random()
+        else:
+            num = request.form.get("index")
+            value = deck.index(num)
+        return render_template('third.html', content=value, deck=str(deck))  # printing the deck
+        # you push buttons on this page again without reloading it
 
 
 if __name__ == '__main__':

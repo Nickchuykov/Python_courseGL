@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Third</title>
+    </head>
+    <body>
+        <div>
+            <form action="/third" method="post">
+                <label>Insert card index</label><br>
+                <input type="text" id="index" name="index">
+                <button type="submit">index</button><br>
+                <button type="submit" id="pop" name="pop">pop</button>
+                <button type="submit" id="shuffle" name="shuffle">shuffle cards</button>
+                <button type="submit" id="get_random" name="get_random">get random card</button>
+            </form>
+        </div>
+        <a href="/">menu</a>
+        <br><br>{{content}}
+        <br><br>{{deck}}
+    </body>
+</html>
