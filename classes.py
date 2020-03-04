@@ -24,8 +24,8 @@ class Deck:
     def shuffle(self):
         r.shuffle(self.deck)
 
-    #def __str__(self):
-     #   return 'Your Deck: ' + (' '.join([str(card) for card in self.deck]))
+    def __str__(self):
+        return 'Your Deck: ' + (" ".join([str(card) for card in self.deck]))
 
     def get_random(self):
         try:
