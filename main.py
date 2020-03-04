@@ -1,11 +1,7 @@
-<<<<<<< HEAD
+
 # telegram @nickchuykov
 from flask import Flask, escape, request, render_template
 from classes import Deck
-=======
-#https://t.me/nickchuykov
-from flask import Flask, escape, request
->>>>>>> bc6d784ea216abe40e7f6c19786259255b808c53
 
 app = Flask(__name__)
 deck = Deck()
