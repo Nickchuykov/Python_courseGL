@@ -9,7 +9,7 @@ class Card:
         self.rank = rank
 
     def __str__(self):  # prints card
-        return self.rank + ' of ' + self.suit
+        return self.rank + self.suit
 
 
 class Deck:
@@ -17,34 +17,34 @@ class Deck:
     def __init__(self):
         self.deck = []
         suits = ('\u2660', '\u2663', '\u2665', '\u2666')
-        ranks = ('Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Jack', 'Queen', 'King', 'Ace')
+        ranks = ('1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King', 'Ace')
         for suit, rank in it.product(suits, ranks):
             self.deck.append(Card(suit, rank))
 
-    def __str__(self):  # prints whole deck
-        return 'The deck Is: ' + (' '.join([str(card) for card in self.deck]))
-
-    def shuffle(self):  # shuffles the deck
+    def shuffle(self):
         r.shuffle(self.deck)
 
-    def get_random(self):  # returns random card from deck
+    def __str__(self):
+        return 'Your Deck: ' + (' '.join([str(card) for card in self.deck]))
+
+    def get_random(self):
         try:
             return str(r.choice(self.deck))
         except IndexError:
             self.__init__()
-            return "No more cards in deck, It was re-created.\nNow you can get random card."
+            return "Howdy! Deck is empty, it was organize again"
 
-    def pop(self):  # pops card from deck
+    def pop(self):
         try:
             return str(self.deck.pop())
         except IndexError:
             self.__init__()
-            return "No more cards in deck, It was re-created.\nNow you can Pop."
+            return "Howdy! Deck is empty, it was organize again"
 
-    def index(self, value):  # returns card on the inputet index
-        if not self.deck:  # if deck is empty
+    def index(self, value):
+        if not self.deck:
             self.__init__()
-            return "No more cards in deck, It was re-created.\nEnter index again."
+            return "Howdy! Deck is empty, it was organize again"
         try:
             return str(self.deck[int(value)])
         except IndexError:
